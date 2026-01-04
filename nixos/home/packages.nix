@@ -1,0 +1,83 @@
+{
+  config,
+  pkgs,
+  lib,
+  nvf,
+  ...
+}:
+{
+  home.packages = with pkgs; [
+    #Rust
+    rustc
+    rust-analyzer
+    rustfmt
+    clippy
+    cargo
+    rustPlatform.rustLibSrc
+
+    #C/C++
+    pkg-config
+    gcc
+    gdb
+    clang-tools
+    cmake
+    gnumake
+    binutils
+
+    #Pascal
+    fpc
+
+    #Python
+    python3
+    python3Packages.yt-dlp
+    python3Packages.python-vlc
+    vlc
+    python3
+    ruff
+    python3Packages.python-lsp-server
+    python3Packages.black
+
+    #program
+    firefox
+    bc
+    waybar
+    rofi
+    swww
+    alacritty
+    wpgtk
+    nwg-look
+    gowall
+    ffmpeg
+    kitty
+    fish
+    neovim
+    telegram-desktop
+    steam
+    mpv
+    zapret
+    pavucontrol
+    playerctl
+    cava
+    fastfetch
+    btop
+    grim
+    slurp
+    wl-clipboard
+    cliphist
+    helix
+    dconf
+    gsettings-desktop-schemas
+    zellij
+    nushell
+    wtype
+    bat
+    ripgrep
+    bottom
+    dust
+    joshuto
+    qbittorrent
+    qtox
+    wine
+    steam-run
+  ];
+}
