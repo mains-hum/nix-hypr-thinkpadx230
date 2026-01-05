@@ -20,8 +20,8 @@
         gtk-layer-shell = true;
 
         margin-top = 10;
-        margin-left = 10;
-        margin-right = 10;
+        margin-left = 15;
+        margin-right = 15;
         spacing = 0;
 
         modules-left = [ "hyprland/workspaces" ];
@@ -35,11 +35,13 @@
         ];
 
         "hyprland/workspaces" = {
-          format = "{id}";
+          format = "󰥱";
           on-click = "activate";
           all-outputs = true;
           persistent-workspaces = {
             "1" = [ ];
+            "2" = [ ];
+            "3" = [ ];
           };
         };
 
@@ -57,7 +59,7 @@
         };
 
         "clock" = {
-          format = "{:%H:%M | %d.%m.%y}";
+          format = "{:%H:%M}";
           tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
         };
 
@@ -67,7 +69,7 @@
         };
 
         "pulseaudio" = {
-          format = "VOL {volume}%";
+          format = "{volume}%";
           format-muted = "MUTED";
           on-click = "pavucontrol";
         };
@@ -100,35 +102,43 @@
 
       window#waybar {
         background-color: @base;
-        border-radius: 8px;
+        opacity: 0.95; 
+        border-radius: 5px;
         color: @text;
       }
 
-      window#waybar > box {
-        margin: 0;
+      #workspaces {
+        margin: 0 4px;
       }
 
       #workspaces button {
-        padding: 0 10px;
+        padding: 0 6px;
         color: @text;
-        margin: 4px 2px;
-        border-radius: 5px;
-        transition: all 0.2s ease;
+        opacity: 0.4;
+        font-size: 10px;
+        transition: all 0.3s ease;
       }
 
       #workspaces button.active {
         color: @mauve;
-        background: rgba(199, 146, 234, 0.15);
+        opacity: 1.0;
+        font-size: 14px;
+      }
+
+      #workspaces button.urgent {
+        color: @yellow;
+        opacity: 1.0;
       }
 
       #workspaces button:hover {
-        background: rgba(183, 189, 248, 0.1);
+        color: @lavender;
+        background: transparent;
+        opacity: 0.8;
       }
 
       #clock, #memory, #pulseaudio, #language, #tray, #window {
         padding: 0 12px;
-        margin: 0;
-        border-radius: 0;
+        background-color: transparent;
       }
 
       #window { 
@@ -152,7 +162,7 @@
       }
 
       #tray { 
-        margin-right: 5px; 
+        margin-right: 8px; 
       }
     '';
   };

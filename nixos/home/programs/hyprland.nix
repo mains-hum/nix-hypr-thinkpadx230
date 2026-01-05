@@ -28,7 +28,7 @@ in
       "$mainMod" = "MOD3";
       "$screenshot" = "grim -g \"$(slurp)\" ~/Pictures/screenshot.png";
       "$browser" = "firefox";
-      "$rofi" = "rofi -show drun";
+      "$launcher" = "fuzzel";
       "$swww" = "swww-daemon";
       "$autoswww" = "swww img ~/Wallpaper/1.* --transition-type none";
       "$volum" = "wpctl set-volume @DEFAULT_AUDIO_SINK@";
@@ -58,13 +58,12 @@ in
       "exec-once" = [
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
-        "python3 /home/nixos/zapret-discord-youtube-linux/start_zapret.py"
         "$swww & $autoswww & waybar"
       ];
 
       general = {
-        gaps_in = 6;
-        gaps_out = 18;
+        gaps_in = 5;
+        gaps_out = 15;
         border_size = 0;
         "col.active_border" =
           "rgba(${cleanHex colors.palette.magenta}ee) rgba(${cleanHex colors.palette.cyan}ee) 45deg";
@@ -73,12 +72,12 @@ in
 
       decoration = {
         rounding = 5;
-        active_opacity = 1.0;
-        inactive_opacity = 0.92;
+        active_opacity = 0.95;
+        inactive_opacity = 0.90;
         fullscreen_opacity = 1.0;
 
         shadow = {
-          enabled = true;
+          enabled = false;
           range = 15;
           render_power = 2;
           color = "rgba(00000088)";
@@ -95,15 +94,8 @@ in
         };
       };
 
-      layerrule = [
-        "blur, ^(waybar)$"
-        "ignorezero, ^(waybar)$"
-        "blur, ^(rofi)$"
-        "ignorezero, ^(rofi)$"
-      ];
-
       animations = {
-        enabled = true;
+        enabled = false;
         bezier = [
           "superfast, 0.05, 0.8, 0.2, 1.05"
           "quick, 0.25, 0.1, 0.25, 1.0"
@@ -130,7 +122,7 @@ in
         "$mainMod, RETURN, exec, alacritty"
         "$mainMod, Q, killactive"
         "$mainMod, F, fullscreen"
-        "$mainMod, R, exec, $rofi"
+        "$mainMod, R, exec, $launcher"
         "$mainMod, W, exec, $browser"
         "$mainMod, D, exec, Telegram"
         "ALT SHIFT, S, exec, $screenshot"
@@ -173,6 +165,16 @@ in
         ", XF86AudioRaiseVolume, exec, $volum 5%+"
         ", XF86AudioLowerVolume, exec, $volum 5%-"
         ", XF86AudioMute, exec, $mute"
+        "CTRL SHIFT, 0, exec, pkill mpvpaper; swww img ~/Wallpaper/0.* --transition-type fade --transition-fps 165"
+        "CTRL SHIFT, 9, exec, pkill mpvpaper; swww img ~/Wallpaper/9.* --transition-type fade --transition-fps 165"
+        "CTRL SHIFT, 8, exec, pkill mpvpaper; swww img ~/Wallpaper/8.* --transition-type fade --transition-fps 165"
+        "CTRL SHIFT, 7, exec, pkill mpvpaper; swww img ~/Wallpaper/7.* --transition-type fade --transition-fps 165"
+        "CTRL SHIFT, 6, exec, pkill mpvpaper; swww img ~/Wallpaper/6.* --transition-type fade --transition-fps 165"
+        "CTRL SHIFT, 5, exec, pkill mpvpaper; swww img ~/Wallpaper/5.* --transition-type fade --transition-fps 165"
+        "CTRL SHIFT, 4, exec, pkill mpvpaper; swww img ~/Wallpaper/4.* --transition-type fade --transition-fps 165"
+        "CTRL SHIFT, 3, exec, pkill mpvpaper; swww img ~/Wallpaper/3.* --transition-type fade --transition-fps 165"
+        "CTRL SHIFT, 2, exec, pkill mpvpaper; swww img ~/Wallpaper/2.* --transition-type fade --transition-fps 165"
+        "CTRL SHIFT, 1, exec, pkill mpvpaper; swww img ~/Wallpaper/1.* --transition-type fade --transition-fps 165"
       ];
 
       binde = [

@@ -2,7 +2,6 @@
   config,
   pkgs,
   lib,
-  nvf,
   ...
 }:
 {
@@ -14,6 +13,8 @@
     clippy
     cargo
     rustPlatform.rustLibSrc
+    bacon
+    nix-init
 
     #C/C++
     pkg-config
@@ -50,7 +51,6 @@
     ffmpeg
     kitty
     fish
-    neovim
     telegram-desktop
     steam
     mpv
@@ -79,5 +79,8 @@
     qtox
     wine
     steam-run
+    fuzzel
+    oxidized
+
   ];
 }
