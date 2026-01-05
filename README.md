@@ -1,6 +1,6 @@
 <div align="center">
 
-# :volcano: [mains-hum] / nix-nord
+# :volcano: [mains-hum] / nix-hypr
 `My main configuration on hyprland NixOS`
 
 <p align="center">

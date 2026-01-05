@@ -30,7 +30,7 @@ in
       "$browser" = "firefox";
       "$launcher" = "fuzzel";
       "$swww" = "swww-daemon";
-      "$autoswww" = "swww img ~/Wallpaper/1.* --transition-type none";
+      "$autoswww" = "swww img ~/Wallpaper/4.* --transition-type none";
       "$volum" = "wpctl set-volume @DEFAULT_AUDIO_SINK@";
       "$mute" = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
 
