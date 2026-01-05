@@ -28,13 +28,17 @@
 
 | Component | Software |
 | :--- | :--- |
-| **Compositor** | `Hyprland` |
+| **WM** | `Hyprland` |
 | **Shell** | `Zellij -> NuShell` |
 | **Terminal** | `Alacritty` |
-| **IDE** | `NFV` |
+| **IDE** | `Helix` |
 | **Bar** | `Waybar` |
-| **Launcher** | `Rofi` |
+| **Launcher** | `Fuzzel` |
 | **File Manager** | `Joshuto` |
+| **Browser** | `FireFox` |
+| **MP3 Player** |`Synapse`|
+| **Wallpaper** |`SWWW`|
+| **Wallpaper Convertor** |`GoWall`|
 
 ---
 
