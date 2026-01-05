@@ -37,8 +37,8 @@
 | **File Manager** | `Joshuto` |
 | **Browser** | `FireFox` |
 | **MP3 Player** |`Synapse`|
-| **Wallpaper** |`SWWW`|
-| **Wallpaper Convertor** |`GoWall`|
+| **Wallpaper** |`swww`|
+| **Wallpaper Convertor** |`gowall`|
 
 ---
 
@@ -46,7 +46,7 @@
 | Keybind | Action | Keybind | Action |
 | :--- | :--- | :--- | :--- |
 | `Caps Lock + E/Ret` | Alacritty | `Caps Lock + Q` | Kill |
-| `Caps Lock + R` | Rofi | `Caps Lock + F` | Fullscreen |
+| `Caps Lock + R` | Fuzzel | `Caps Lock + F` | Fullscreen |
 | `Super + Alt + Shift + Q` | PowerOff | `Caps Lock + W` | Firefox |
 | `Caps Lock + Space` | Layout | `Alt + Shift + S` | Screenshot |
 | `Caps Lock + D` | Telegram | `Caps Lock + A` | Steam |
