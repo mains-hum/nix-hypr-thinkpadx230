@@ -81,6 +81,6 @@
     steam-run
     fuzzel
     oxidized
-
+    ironbar
   ];
 }

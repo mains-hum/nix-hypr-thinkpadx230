@@ -4,18 +4,13 @@
   programs.nushell = {
     enable = true;
     configFile.text = ''
-      fastfetch
-
       $env.config = {
         show_banner: false
         edit_mode: vi 
-        
         cursor_shape: {
           vi_insert: block
           vi_normal: underscore
         }
-        
-        render_right_prompt_on_last_line: false
       }
 
       $env.PROMPT_COMMAND = { || 
@@ -23,6 +18,14 @@
         $"(ansi blue)╭─[ (ansi cyan)($path)(ansi blue) ]\n(ansi green)❯ "
       }
       $env.PROMPT_COMMAND_RIGHT = { || "" }
+
+      def ze [] {
+        zellij attach -c last
+      }
+
+      if "ZELLIJ" not-in ($env | columns) {
+          ze
+      }
 
       alias la = ls -a
       alias .. = cd ..

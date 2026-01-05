@@ -13,52 +13,35 @@
 
       session_serialization = true;
       serialize_pane_viewport = true;
-      on_force_close = "detach";
+      scrollback_lines_to_serialize = 10000;
+
+      plugins = {
+        resurrect = { location = "zellij:zellij-resurrect"; };
+      };
+
+      load_plugins = {
+        resurrect = {
+          on_startup = true;
+          interval = 30;
+        };
+      };
 
       keybinds = {
         "shared_except \"locked\"" = {
-          "bind \"Ctrl a\"" = {
-            NewPane = "Down";
-          };
-          "bind \"Ctrl s\"" = {
-            NewPane = "Right";
-          };
-          "bind \"Ctrl h\"" = {
-            MoveFocus = "Left";
-          };
-          "bind \"Ctrl l\"" = {
-            MoveFocus = "Right";
-          };
-          "bind \"Ctrl j\"" = {
-            MoveFocus = "Down";
-          };
-          "bind \"Ctrl k\"" = {
-            MoveFocus = "Up";
-          };
-          "bind \"Alt h\"" = {
-            Resize = "Increase Left";
-          };
-          "bind \"Alt l\"" = {
-            Resize = "Increase Right";
-          };
-          "bind \"Alt j\"" = {
-            Resize = "Increase Down";
-          };
-          "bind \"Alt k\"" = {
-            Resize = "Increase Up";
-          };
-          "bind \"Ctrl t\"" = {
-            NewTab = [ ];
-          };
-          "bind \"Alt w\"" = {
-            CloseTab = [ ];
-          };
-          "bind \"Alt n\"" = {
-            GoToNextTab = [ ];
-          };
-          "bind \"Alt p\"" = {
-            GoToPreviousTab = [ ];
-          };
+          "bind \"Ctrl a\"" = { NewPane = "Down"; };
+          "bind \"Ctrl s\"" = { NewPane = "Right"; };
+          "bind \"Ctrl h\"" = { MoveFocus = "Left"; };
+          "bind \"Ctrl l\"" = { MoveFocus = "Right"; };
+          "bind \"Ctrl j\"" = { MoveFocus = "Down"; };
+          "bind \"Ctrl k\"" = { MoveFocus = "Up"; };
+          "bind \"Alt h\"" = { Resize = "Increase Left"; };
+          "bind \"Alt l\"" = { Resize = "Increase Right"; };
+          "bind \"Alt j\"" = { Resize = "Increase Down"; };
+          "bind \"Alt k\"" = { Resize = "Increase Up"; };
+          "bind \"Ctrl t\"" = { NewTab = [ ]; };
+          "bind \"Alt w\"" = { CloseTab = [ ]; };
+          "bind \"Alt n\"" = { GoToNextTab = [ ]; };
+          "bind \"Alt p\"" = { GoToPreviousTab = [ ]; };
         };
       };
 

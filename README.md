@@ -1,6 +1,6 @@
 <div align="center">
 
-# :trollface: [mains-hum] / nix-nord
+# :volcano: [mains-hum] / nix-nord
 `My main configuration on hyprland NixOS`
 
 <p align="center">
