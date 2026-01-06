@@ -13,7 +13,7 @@
 ---
 </div>
 
-## 📸 Screenshot
+## :elephant: Screenshot
 <p align="center">
   <img src="screenshot/1.png" width="48%" />
   <img src="screenshot/2.png" width="48%" />
@@ -24,7 +24,7 @@
 
 ---
 
-## 🎯 Core Stack
+## :cow2: Core Stack
 
 | Component | Software |
 | :--- | :--- |
@@ -42,7 +42,7 @@
 
 ---
 
-## ⌨️ Navigation
+## :blowfish: Navigation
 | Keybind | Action | Keybind | Action |
 | :--- | :--- | :--- | :--- |
 | `Caps Lock + E/Ret` | Alacritty | `Caps Lock + Q` | Kill |
@@ -53,7 +53,7 @@
 
 ---
 
-## 📦 Installation
+## :whale2: Installation
 
 ### Prerequisites
 
@@ -86,7 +86,7 @@
 
 ---
 
-### ⚠️ Important Notes
+### :penguin: Important Notes
 
 - Configure your monitor in Hyprland:
 
@@ -117,7 +117,7 @@ Made with by mains-hum
 
 ---
 
-## 📝 License
+##  :ram: License
 
 nix-dotf  Copyright (C) 2025-2040  mains-hum
 
