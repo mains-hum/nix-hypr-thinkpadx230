@@ -11,18 +11,18 @@
 </p>
 
 ---
-</div>
+## :camel: My Workstation: ThinkPad X230
 
-## :elephant: Screenshot
-<p align="center">
-  <img src="screenshot/1.png" width="48%" />
-  <img src="screenshot/2.png" width="48%" />
-  <br />
-  <img src="screenshot/3.png" width="48%" />
-  <img src="screenshot/4.png" width="48%" />
-</p>
+| Component | Specification |
+| :--- | :--- |
+| **CPU** | Intel® Core™ i5-3320M |
+| **Graphics** | Intel® HD Graphics 4000 |
+| **RAM** | 8GB DDR3 |
+| **Storage** | 300GB HDD (ROTA 1) |
+| **Display** | 12.5" TN (1366x768) |
 
 ---
+</div>
 
 ## :cow2: Core Stack
 
@@ -49,56 +49,11 @@
 | `Caps Lock + R` | Fuzzel | `Caps Lock + F` | Fullscreen |
 | `Super + Alt + Shift + Q` | PowerOff | `Caps Lock + W` | Firefox |
 | `Caps Lock + Space` | Layout | `Alt + Shift + S` | Screenshot |
-| `Caps Lock + D` | Telegram | `Caps Lock + A` | Steam |
-
----
-
-## :whale2: Installation
-
-### Prerequisites
-
-- Fresh NixOS installation
-- Username: `nixos` **(recommended)**
-- Basic understanding of Nix flakes
-
-```bash
-# Install git
-> sudo nano /etc/nixos/configuration.nix
-
-# Add to systemPackages: git
-> sudo nixos-rebuild switch
-
-# Clone this repository
-> mkdir Pictures
-> git clone https://github.com/mains-hum/nix-hypr.git
-> cd ~/nix-paradise/nixos
-
-# Copy configuration files
-> sudo rm -rf /etc/nixos/configuration.nix
-> sudo cp -a home/ img/ modules/ configuration.nix flake.lock flake.nix /etc/nixos
-
-# Rebuild
-> sudo nixos-rebuild switch --flake /etc/nixos#nixos
-
-# Reboot your system
-> reboot
-```
+| `Caps Lock + D` | Telegram |
 
 ---
 
 ### :penguin: Important Notes
-
-- Configure your monitor in Hyprland:
-
-```bash
-> sh /etc/nixos/home/programs/hyprland.nix
-```
-
-```conf
-monitor = DP-1, 1920x1080@165, 0x0, 1
-# For multiple monitors:
-# monitor = HDMI-A-1, 1920x1080@60, 1920x0, 1
-```
 
 -  Use username **`nixos`** for best compatibility
 -  **Do not change** the layout switch from `ALT + SHIFT` (breaks keybindings)
@@ -119,7 +74,7 @@ Made with by mains-hum
 
 ##  :ram: License
 
-nix-dotf  Copyright (C) 2025-2040  mains-hum
+nix-hypr-thinkpadx230  Copyright (C) 2026-2040  mains-hum
 
 See the [LICENSE](LICENSE) file for details.
 
