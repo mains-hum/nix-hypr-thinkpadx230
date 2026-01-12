@@ -13,6 +13,7 @@
 ---
 
 </div>
+
 ## :camel: My Workstation: ThinkPad X230
 
 | Component | Specification |
