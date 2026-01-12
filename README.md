@@ -1,6 +1,6 @@
 <div align="center">
 
-# :octopus: [mains-hum] / nix-hypr
+# :octopus: [mains-hum] / nix-hypr-thinkpadx230
 `My main configuration on hyprland NixOS`
 
 <p align="center">
@@ -11,6 +11,8 @@
 </p>
 
 ---
+
+</div>
 ## :camel: My Workstation: ThinkPad X230
 
 | Component | Specification |
@@ -22,7 +24,6 @@
 | **Display** | 12.5" TN (1366x768) |
 
 ---
-</div>
 
 ## :cow2: Core Stack
 
