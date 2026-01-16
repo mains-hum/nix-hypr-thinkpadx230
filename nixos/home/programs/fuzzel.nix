@@ -10,13 +10,13 @@
     enable = true;
     settings = {
       main = {
-        font = "JetBrainsMono Nerd Font:size=12";
+        font = "JetBrainsMono Nerd Font:size=8";
         prompt = "❯   ";
-        width = 30;
-        horizontal-pad = 20;
+        width = 25;
+        horizontal-pad = 15;
         vertical-pad = 15;
-        inner-pad = 10;
-        line-height = 25;
+        inner-pad = 15;
+        line-height = 15;
         terminal = "alacritty";
         show-icons = "no";
         icons-enabled = "no";

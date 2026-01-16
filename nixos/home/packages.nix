@@ -15,6 +15,7 @@
     rustPlatform.rustLibSrc
     bacon
     nix-init
+    hyperfine
 
     #C/C++
     pkg-config
@@ -52,8 +53,6 @@
     kitty
     fish
     telegram-desktop
-    steam
-    lsd
     mpv
     zapret
     pavucontrol
@@ -82,6 +81,6 @@
     steam-run
     fuzzel
     oxidized
-    prismlauncher
+    tt
   ];
 }

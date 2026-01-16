@@ -6,20 +6,25 @@
 }:
 {
   imports = [
+    # ./modules/disk.nix
     ./hardware-configuration.nix
-    ./modules/nvidia.nix
+    ./modules/intel.nix
     ./modules/hyprland.nix
+    ./modules/grub.nix
     ./modules/audio.nix
     ./modules/fonts.nix
     ./modules/zapret.nix
-    ./home/programs/server.nix
   ];
 
   system.stateVersion = "26.05";
 
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.systemd-boot.configurationLimit = 3;
+  boot.loader.grub.enable = true;
+  boot.loader.grub.device = "/dev/sda";
+  boot.loader.grub.useOSProber = true;
+  zramSwap.enable = true;
+  boot.loader.systemd-boot.enable = false;
+  boot.loader.efi.canTouchEfiVariables = false;
+  services.udisks2.enable = true;
 
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
@@ -79,7 +84,6 @@
 
   services.flatpak.enable = true;
   services.gvfs.enable = true;
-  services.udisks2.enable = true;
 
   environment.variables = {
     XCURSOR_THEME = "phinger-cursors-dark";

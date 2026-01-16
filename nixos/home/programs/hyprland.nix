@@ -30,21 +30,9 @@ in
       "$browser" = "firefox";
       "$launcher" = "fuzzel";
       "$swww" = "swww-daemon";
-      "$autoswww" = "swww img ~/Wallpaper/4.* --transition-type none";
+      "$autoswww" = "swww img ~/Wallpaper/2.* --transition-type none";
       "$volum" = "wpctl set-volume @DEFAULT_AUDIO_SINK@";
       "$mute" = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
-
-      monitor = [
-        "DP-2, 1920x1080@60, -1920x540, 1"
-        "HDMI-A-1, 1920x1080@99, -1920x-540, 1"
-        "DP-1, 1920x1080@165, 0x0, 1"
-      ];
-
-      workspace = [
-        "1, monitor:DP-2, default:true"
-        "2, monitor:HDMI-A-1, default:true"
-        "3, monitor:DP-1, default:true"
-      ];
 
       env = [
         "XCURSOR_THEME, phinger-cursors-dark"
@@ -63,7 +51,7 @@ in
 
       general = {
         gaps_in = 5;
-        gaps_out = 15;
+        gaps_out = 10;
         border_size = 0;
         "col.active_border" =
           "rgba(${cleanHex colors.palette.magenta}ee) rgba(${cleanHex colors.palette.cyan}ee) 45deg";

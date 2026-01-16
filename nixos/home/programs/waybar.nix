@@ -6,16 +6,7 @@
   ...
 }:
 
-let
-  waybar_cava_script = pkgs.writeShellScript "waybar-cava" ''
-    export LANG=en_US.UTF-8
-    ${pkgs.cava}/bin/cava -p $HOME/.config/cava/config_waybar | \
-    sed -u 's/;//g;s/0/▂/g;s/1/▂/g;s/2/▃/g;s/3/▄/g;s/4/▅/g;s/5/▆/g;s/6/▇/g;s/7/█/g'
-  '';
-in
 {
-  home.packages = [ pkgs.cava ];
-
   programs.waybar = {
     enable = true;
 
@@ -23,30 +14,28 @@ in
       mainBar = {
         layer = "top";
         position = "top";
-        height = 30;
+        height = 24;
         exclusive = true;
 
         margin-top = 10;
-        margin-left = 15;
-        margin-right = 15;
+        margin-left = 10;
+        margin-right = 10;
 
         modules-left = [
           "hyprland/workspaces"
+          "hyprland/window"
           "custom/cava"
         ];
-        modules-center = [ "hyprland/window" ];
+        modules-center = [ ];
         modules-right = [
+          "network"
           "pulseaudio"
           "memory"
+          "battery"
           "hyprland/language"
           "clock"
           "tray"
         ];
-
-        "custom/cava" = {
-          exec = "${waybar_cava_script}";
-          format = "{}";
-        };
 
         "hyprland/workspaces" = {
           format = "󰥱";
@@ -54,8 +43,6 @@ in
           all-outputs = true;
           persistent-workspaces = {
             "1" = [ ];
-            "2" = [ ];
-            "3" = [ ];
           };
         };
 
@@ -72,18 +59,60 @@ in
         };
 
         "clock" = {
-          format = "{:%H:%M:%S}";
+          format = "{:%H:%M:%S | %d.%m.%y | %A}";
           interval = 1;
         };
 
         "memory" = {
-          format = "RAM {used:0.1f}G";
+          format = "  {used:0.1f}G";
           interval = 10;
         };
 
+        "network" = {
+          format-wifi = "  {bandwidthDownBits}";
+          format-ethernet = "󰈀  {bandwidthDownBits}";
+          format-disconnected = "󰖪  OFF";
+          interval = 1;
+          tooltip-format = "{ifname} via {gwaddr}\n⬆ {bandwidthUpBits} ⬇ {bandwidthDownBits}";
+          on-click = "nm-connection-editor";
+        };
+
+        "battery" = {
+          states = {
+            warning = 30;
+            critical = 15;
+          };
+          format = "{icon} {capacity}%";
+          format-charging = "󱐋 {capacity}%";
+          format-plugged = " {capacity}%";
+          format-icons = [
+            "󰂎"
+            "󰁺"
+            "󰁻"
+            "󰁼"
+            "󰁽"
+            "󰁾"
+            "󰁿"
+            "󰂀"
+            "󰂁"
+            "󰂂"
+            "󰁹"
+          ];
+        };
+
         "pulseaudio" = {
-          format = "{volume}%";
+          format = "{icon}  {volume}%";
           format-muted = "MUTED";
+          format-icons = {
+            headphone = "";
+            hands-free = "";
+            headset = "";
+            default = [
+              ""
+              ""
+              ""
+            ];
+          };
           on-click = "pavucontrol";
         };
 
@@ -102,12 +131,13 @@ in
       @define-color blue      ${colors.palette.blue};
       @define-color green     ${colors.palette.green};
       @define-color yellow    ${colors.palette.yellow};
+      @define-color orange    #fab387;
 
       * {
         border: none;
         border-radius: 0;
         font-family: "JetBrainsMono Nerd Font", sans-serif;
-        font-size: 13px;
+        font-size: 12px;
         font-weight: bold;
       }
 
@@ -143,7 +173,7 @@ in
         background: transparent;
       }
 
-      #clock, #memory, #pulseaudio, #language, #tray, #window {
+      #clock, #memory, #pulseaudio, #language, #tray, #window, #network, #battery {
         padding: 0 12px;
       }
 
@@ -152,24 +182,9 @@ in
       #language { color: @blue; }
       #memory { color: @green; }
       #pulseaudio { color: @yellow; }
+      #network { color: @lavender; }
+      #battery { color: @orange; }
       #tray { margin-right: 8px; }
     '';
   };
-
-  xdg.configFile."cava/config_waybar".text = ''
-    [general]
-    bars = 10
-    sleep_timer = 5
-    framerate = 60
-
-    [input]
-    method = pulse
-    source = auto
-
-    [output]
-    method = raw
-    raw_target = /dev/stdout
-    data_format = ascii
-    ascii_max_range = 7
-  '';
 }

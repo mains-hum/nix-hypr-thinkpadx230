@@ -4,7 +4,7 @@
   programs.helix = {
     enable = true;
     settings = {
-      theme = "custom_ocean_transparent";
+      theme = "custom_monochrome";
       editor = {
         line-number = "relative";
         cursorline = true;
@@ -12,6 +12,7 @@
         true-color = true;
         lsp.display-messages = true;
         bufferline = "multiple";
+        rulers = [ ];
         cursor-shape = {
           insert = "bar";
           normal = "block";
@@ -69,16 +70,26 @@
     };
   };
 
-  xdg.configFile."helix/themes/custom_ocean_transparent.toml".text = ''
-    inherits = "catppuccin_macchiato"
+  xdg.configFile."helix/themes/custom_monochrome.toml".text = ''
+    inherits = "base16_transparent"
     "ui.background" = { }
+    "ui.linenr" = { fg = "${colors.palette.surface2}" }
+    "ui.linenr.selected" = { fg = "${colors.palette.surface2}" }
     "ui.statusline" = { fg = "${colors.palette.fg}", bg = "${colors.palette.surface0}" }
     "ui.virtual.indent-guide" = { fg = "${colors.palette.surface1}" }
-    "ui.cursor.match" = { fg = "${colors.palette.yellow}", modifiers = ["bold"] }
-    "ui.bufferline.active" = { fg = "${colors.palette.bg}", bg = "${colors.palette.lavender}", modifiers = ["bold"] }
+    "ui.cursor.match" = { fg = "${colors.palette.white}", modifiers = ["bold", "underline"] }
+    "ui.bufferline.active" = { fg = "${colors.palette.bg}", bg = "${colors.palette.fg}", modifiers = ["bold"] }
     "ui.statusline.inactive" = { fg = "${colors.palette.overlay0}", bg = "${colors.palette.bg}" }
     "ui.help" = { bg = "${colors.palette.surface0}", fg = "${colors.palette.fg}" }
     "ui.menu" = { bg = "${colors.palette.surface0}", fg = "${colors.palette.fg}" }
-    "ui.menu.selected" = { bg = "${colors.palette.surface1}", fg = "${colors.palette.magenta}" }
+    "ui.menu.selected" = { bg = "${colors.palette.fg}", fg = "${colors.palette.bg}" }
+    "ui.selection" = { bg = "${colors.palette.surface2}" }
+    "variable" = "${colors.palette.fg}"
+    "constant" = "${colors.palette.orange}"
+    "keyword" = "${colors.palette.magenta}"
+    "string" = "${colors.palette.green}"
+    "function" = "${colors.palette.blue}"
+    "type" = "${colors.palette.yellow}"
+    "ui.cursor" = { fg = "${colors.palette.bg}", bg = "${colors.palette.white}" }
   '';
 }
